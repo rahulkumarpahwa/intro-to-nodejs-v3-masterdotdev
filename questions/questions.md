@@ -87,3 +87,18 @@
 
 30. What file is created when initializing a Node.js project with npm init?
 30. package.json
+
+31. How can you access the third argument passed to a CLI using Node.js?
+31. Using process.argv[2], since the first two indexes are reserved for the environment and file path
+
+32. Why do you need to wrap a multi-word CLI argument in quotes?
+32. To prevent the argument from being split into multiple separate arguments by spaces
+
+33. What method can be used to generate a unique identifier for a note?
+33. Date.now() which returns the current timestamp in milliseconds
+
+34. What happens to program memory and data when a Node.js script finishes executing?
+34. The memory is wiped, and all data is lost unless it is explicitly persisted
+
+35. What are the initial properties of the note object being created?
+35. The note object has two properties: 'content' (the note text) and 'id' (a unique timestamp identifier)
