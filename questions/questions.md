@@ -72,3 +72,18 @@
 
 25. How are environment variables typically managed and shared across a team?
 25. Environment variables can be managed through methods like using password managers, encrypted vaults, creating individual database users with separate credentials, using DevOps platforms like AWS, or using specialized apps that securely distribute environment variables across a team.
+
+26. What does CLI stand for?
+26. Command Line Interface
+
+27. How can you describe a CLI's interaction with a computer?
+27. Like chatting with your computer using specific commands
+
+28. What is the purpose of the hashbang (#!/usr/bin/env node) in a CLI script?
+28. To tell the operating system which runtime environment (Node.js) should be used to execute the script
+
+29. What command initializes a new Node.js project?
+29. npm init (or npm init --yes for default settings)
+
+30. What file is created when initializing a Node.js project with npm init?
+30. package.json

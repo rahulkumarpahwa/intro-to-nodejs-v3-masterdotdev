@@ -1,0 +1,24 @@
+{
+  "name": "intro-to-nodejs-v3-masterdotdev",
+  "version": "1.0.0",
+  "description": "This is a sample project for the course 'Intro to Node.js v3' by Master.dev (https://master.dev).",
+  "main": "index.js",
+  "bin": {
+    "note": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulkumarpahwa/intro-to-nodejs-v3-masterdotdev.git"
+  },
+  "keywords": [],
+  "author": "Rahul Kumar <rahul@rahulkumarpahwa.me>",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rahulkumarpahwa/intro-to-nodejs-v3-masterdotdev/issues"
+  },
+  "homepage": "https://github.com/rahulkumarpahwa/intro-to-nodejs-v3-masterdotdev#readme"
+}
