@@ -57,3 +57,18 @@
 
 20. How do you enter the Node.js REPL in the terminal?
 20. Type 'node' with no arguments, which opens an interactive JavaScript environment
+
+21. What is the process global in Node.js and what does it provide access to?
+21. The process global provides access to information and methods related to the operating system where the code is running, such as computer name, running programs, and environment-specific details, allowing Node.js applications to be dynamic across different computers and environments.
+
+22. What is process.argv in Node.js?
+22. Process.argv is an array that contains command-line arguments passed to a Node.js script. The first two elements are always the Node.js executable path and the script file path, with subsequent elements being additional arguments passed to the script.
+
+23. What is process.env used for in Node.js?
+23. Process.env provides access to environment variables, which are used to store secrets, configuration settings, and other environment-specific values that can be dynamically accessed without hardcoding sensitive information into the application.
+
+24. What is the purpose of the NODE_ENV environment variable?
+24. The NODE_ENV variable is used to switch the application mode between development, production, and testing, allowing developers to conditionally enable or disable features like logging, authentication, analytics, and performance optimizations based on the current environment.
+
+25. How are environment variables typically managed and shared across a team?
+25. Environment variables can be managed through methods like using password managers, encrypted vaults, creating individual database users with separate credentials, using DevOps platforms like AWS, or using specialized apps that securely distribute environment variables across a team.
