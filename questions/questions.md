@@ -42,3 +42,18 @@
 
 15. How can you check the installed version of Node.js in the terminal?
 15. Use the command node --version to display the currently installed Node.js version
+
+16. What is the global object in a browser environment?
+16. Window object, where many global methods and properties are attached
+
+17. What is the equivalent of the browser's window object in Node.js?
+17. The global object, though it is rarely used directly
+
+18. What key difference exists between browser and Node.js JavaScript regarding DOM manipulation?
+18. Node.js has no DOM, so methods like document.getElementById() cannot be used since there is no HTML or webpage
+
+19. What does REPL stand for?
+19. Read, Evaluate, Print, Loop - an interactive environment for writing and testing JavaScript code inline
+
+20. How do you enter the Node.js REPL in the terminal?
+20. Type 'node' with no arguments, which opens an interactive JavaScript environment
