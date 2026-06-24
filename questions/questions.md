@@ -102,3 +102,18 @@
 
 35. What are the initial properties of the note object being created?
 35. The note object has two properties: 'content' (the note text) and 'id' (a unique timestamp identifier)
+
+36. What is an IIFE and what is its primary purpose in JavaScript?
+36. An Immediately Invoked Function Expression (IIFE) is a function that encapsulates code in its own scope, isolating it from the global space and preventing interference from other scripts.
+
+37. What are the three types of modules in Node.js?
+37. The three types of modules in Node.js are: 1) Internal modules (like http, file system), 2) User-created modules (pieces of code created by the developer), and 3) Third-party modules (modules created by others and downloaded)
+
+38. What is the key difference between setting up ES6 modules versus CommonJS modules in Node.js?
+38. In Node.js, to use ES6 modules, you need to add a 'type' field with the value 'module' in the package.json file, which enables import/export statements instead of using require()
+
+39. What is the difference between a named export and a default export in JavaScript modules?
+39. A named export must be imported using its original name with curly braces, while a default export can be imported with any name and does not require curly braces
+
+40. Why do Node.js modules with type 'module' require explicit .js file extensions when importing?
+40. With modules, explicit extensions help distinguish between different types of files (JavaScript, CSS, images) that might have similar names, ensuring the correct file is imported
