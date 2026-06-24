@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import data, { util } from "./utils.js";
+import fs from "fs";
 console.log("Hello! Welcome to the note-taking app!\n");
 // console.log(process.argv);
 util();

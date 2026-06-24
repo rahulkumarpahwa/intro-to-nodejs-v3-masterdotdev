@@ -117,3 +117,18 @@
 
 40. Why do Node.js modules with type 'module' require explicit .js file extensions when importing?
 40. With modules, explicit extensions help distinguish between different types of files (JavaScript, CSS, images) that might have similar names, ensuring the correct file is imported
+
+41. What is the syntax for importing a core Node.js module like 'fs'?
+41. Use the module name directly without a path, such as import fs from 'fs' or import { readFile } from 'fs'
+
+42. What is the difference between importing a local module versus a core Node.js module?
+42. Local modules require a path (starting with './' or '../'), while core Node.js modules can be imported by their name directly
+
+43. What is the CommonJS equivalent of import count from './count.js'?
+43. In CommonJS: const count = require('./count.js')
+
+44. How do you export a default object in CommonJS?
+44. Using module.exports = { count: someFunction } which exports an object with properties
+
+45. What configuration is needed to use ES6 module syntax in Node.js?
+45. Ensure 'type: module' is enabled in your project configuration
