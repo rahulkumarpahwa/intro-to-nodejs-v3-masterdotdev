@@ -147,3 +147,18 @@
 
 50. What are two key benefits of breaking code into small modules?
 50. Easier individual testing of code components, and 2) Reduced likelihood of merge conflicts when working in team environments by separating different functionalities into distinct modules.
+
+51. What does the 'fs' module in Node.js stand for and what can it do?
+51. FS stands for file system. It allows performing file-related operations like reading, writing, and manipulating files programmatically, essentially replicating most file interactions a human can do on a computer.
+
+52. What is the purpose of the 'http' module in Node.js?
+52. The 'http' module helps with networking in Node.js, positioned just above TCP level. It can be used to create servers, send responses like JSON, images, or files.
+
+53. What does npm stand for, and what is its primary function?
+53. npm stands for Node Package Manager. Its primary function is to manage and install packages for Node.js applications.
+
+54. Why should you not include the 'node_modules' folder in Git repositories?
+54. Including 'node_modules' in Git would create massive pull requests with changes to third-party code, and the dependencies are not code you've written. Instead, package.json and package-lock.json allow easy recreation of dependencies.
+
+55. What is the purpose of the package-lock.json file?
+55. The package-lock.json file locks in the exact versions of installed dependencies, ensuring that the same versions are used across different machines and team members.
