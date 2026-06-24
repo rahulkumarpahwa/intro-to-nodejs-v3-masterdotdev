@@ -132,3 +132,18 @@
 
 45. What configuration is needed to use ES6 module syntax in Node.js?
 45. Ensure 'type: module' is enabled in your project configuration
+
+46. What is a recommended approach for organizing code modules?
+46. Keep files light and small, associate things by logical grouping, create modules freely without worrying about performance, and aim to make modules as small and modular as possible to improve testability and reduce merge conflicts.
+
+47. What is the purpose of the index.js pattern in module organization?
+47. The index.js file acts as a router or aggregator for modules, importing and re-exporting modules from a folder, allowing for a clean and centralized way to import multiple modules using a single import statement.
+
+48. How can you import all exports from a folder using JavaScript?
+48. Use the star (*) import syntax with a folder, which will automatically look for an index.js file and import all exports. For example: import * as utils from './utils' will import everything exported from the utils folder's index.js file.
+
+49. What syntax is recommended for importing modules in modern JavaScript development?
+49. The import/export ES6 syntax is recommended, as it provides consistency across frontend and backend development and is likely to become the default behavior in future Node.js versions.
+
+50. What are two key benefits of breaking code into small modules?
+50. Easier individual testing of code components, and 2) Reduced likelihood of merge conflicts when working in team environments by separating different functionalities into distinct modules.
