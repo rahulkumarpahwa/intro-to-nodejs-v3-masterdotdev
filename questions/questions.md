@@ -177,3 +177,18 @@
 
 60. What is the purpose of the parse() method in Yargs configuration?
 60. The parse() method signals Yargs to execute the command parsing and processing of command-line arguments
+
+61. What method does yargs provide to define a command's positional argument?
+61. yargs.positional() can be used to define a positional argument, specifying its type and description
+
+62. What does the difference between angle brackets <> and square brackets [] mean when defining command arguments?
+62. Angle brackets <> indicate a required argument, while square brackets [] indicate an optional argument with a potential default value
+
+63. How can you add an option/flag to a command in yargs?
+63. Use an options method with an object that can specify an alias, type, and description for the option
+
+64. What are the benefits of using yargs for CLI command creation?
+64. Yargs provides a more structured approach to creating CLI commands compared to using multiple if statements and regular expressions
+
+65. How can you check the available commands and their help information in a yargs CLI application?
+65. Use the --help flag to display a list of all available commands and their descriptions
