@@ -162,3 +162,18 @@
 
 55. What is the purpose of the package-lock.json file?
 55. The package-lock.json file locks in the exact versions of installed dependencies, ensuring that the same versions are used across different machines and team members.
+
+56. What does the Yargs library help developers do with command-line tools?
+56. Yargs helps build interactive command-line tools by parsing arguments and generating an elegant user interface
+
+57. What does the demand() method do in Yargs configuration?
+57. It ensures that at least one command must be used when running the CLI, preventing execution without a specified command
+
+58. How does Yargs transform command-line arguments compared to raw process.argv?
+58. Yargs converts command-line arguments into a formatted object and can automatically typecast arguments based on specified configurations
+
+59. What free feature does Yargs provide for command-line interfaces?
+59. Yargs automatically generates a help menu (--help) that lists available commands and flags without requiring manual implementation
+
+60. What is the purpose of the parse() method in Yargs configuration?
+60. The parse() method signals Yargs to execute the command parsing and processing of command-line arguments

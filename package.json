@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/rahulkumarpahwa/intro-to-nodejs-v3-masterdotdev/issues"
   },
-  "homepage": "https://github.com/rahulkumarpahwa/intro-to-nodejs-v3-masterdotdev#readme"
+  "homepage": "https://github.com/rahulkumarpahwa/intro-to-nodejs-v3-masterdotdev#readme",
+  "dependencies": {
+    "yargs": "^18.0.0"
+  }
 }
