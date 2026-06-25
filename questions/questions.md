@@ -192,3 +192,20 @@
 
 65. How can you check the available commands and their help information in a yargs CLI application?
 65. Use the --help flag to display a list of all available commands and their descriptions
+
+The async-await (or promise.then) pattern is useful when one async operation depends on the other. For example, if you want to check if the username is available first, THEN register the new user. Or if async operations are independent, you could run them simultaneously with Promise.all()
+
+66. What are the three main scenarios that typically make code asynchronous in Node.js?
+66. Interacting with networks/internet, 2. Using timing functions like setTimeout or setInterval, 3. Interacting with file systems or databases
+
+67. What is the primary problem with using nested callbacks in asynchronous JavaScript?
+67. It creates a complex, hard-to-read 'callback hell' or 'upside-down pyramid' where code becomes deeply nested and difficult to understand and maintain
+
+68. What is the purpose of converting a callback-based function to a Promise?
+68. To allow easier chaining of asynchronous operations, keeping callback depth to one level and making the code more readable and manageable
+
+69. What does async/await allow developers to do with asynchronous code?
+69. Transform asynchronous code that returns a Promise into synchronous-looking code that executes line by line, making it easier to read and reason about
+
+70. What are the requirements for using await in a function?
+70. The function must be marked as async, and the value being awaited must return a Promise
