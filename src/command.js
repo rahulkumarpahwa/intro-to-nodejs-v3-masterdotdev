@@ -31,7 +31,7 @@
 
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { insert, readDB, writeDB } from "./database/db.js";
+import { createNote, getAllNotes, findNotes, removeNote, cleanNotes } from "./notes.js";
 
 yargs(hideBin(process.argv))
   .command(
@@ -43,7 +43,10 @@ yargs(hideBin(process.argv))
         type: "string",
       });
     },
-    async (argv) => {},
+    async (argv) => {
+      const note = await createNote({ content: argv.note, tags: argv.tags });
+      console.log(`Note created: ${note.content}`);
+    },
   )
   .option("tags", {
     alias: "t",
@@ -54,7 +57,17 @@ yargs(hideBin(process.argv))
     "all",
     "get all notes",
     () => {},
-    async (argv) => {},
+    async (argv) => {
+      const notes = await getAllNotes();
+      if (notes.length === 0) {
+        console.log("No notes found.");
+      } else {
+        console.log("All notes:");
+        notes.forEach((note) => {
+          console.table(`- [${note.id}] ${note.content} Tags: ${note.tags?.join(", ") || "None"}`);
+        });
+      }
+    },
   )
   .command(
     "find <filter>",
@@ -66,7 +79,17 @@ yargs(hideBin(process.argv))
         type: "string",
       });
     },
-    async (argv) => {},
+    async (argv) => {
+      const findedNote = await findNotes(argv.filter);
+      if (findedNote.length === 0) {
+        console.log(`No notes found matching "${argv.filter}".`);
+      } else {
+        console.log(`Notes matching "${argv.filter}":`);
+        findedNote.forEach((note) => {
+          console.table(`- [${note.id}] ${note.content} Tags: ${note.tags?.join(", ") || "None"}`);
+        });
+      }
+    },
   )
   .command(
     "remove <id>",
@@ -77,7 +100,14 @@ yargs(hideBin(process.argv))
         description: "The id of the note you want to remove",
       });
     },
-    async (argv) => {},
+    async (argv) => {
+      const removedNote = await removeNote(argv.id);
+      if (removedNote.length === 0) {
+        console.log(`No note found with id ${argv.id}.`);
+      } else {
+        console.log(`Note removed: ${removedNote[0].content}`);
+      }
+    },
   )
   .command(
     "web [port]",
@@ -89,13 +119,18 @@ yargs(hideBin(process.argv))
         type: "number",
       });
     },
-    async (argv) => {},
+    async (argv) => {
+      
+    },
   )
   .command(
     "clean",
     "remove all notes",
     () => {},
-    async (argv) => {},
+    async (argv) => {
+      await cleanNotes();
+      console.log("All notes have been removed.");
+    },
   )
   .demandCommand(1)
   .parse();

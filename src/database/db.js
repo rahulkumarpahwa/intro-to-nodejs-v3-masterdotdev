@@ -16,7 +16,6 @@ export const writeDB = async (data) => {
 
 export const insert = async (data) => {
   const db = await readDB();   // Read the current database
-  db.notes = db.notes || [];    // Ensure the notes array exists
     db.notes.push(data); // Add the new note to the notes array
     await writeDB(db); // Write the updated database back to db.json
     return data;

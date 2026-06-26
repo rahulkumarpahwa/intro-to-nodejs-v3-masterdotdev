@@ -239,3 +239,15 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 80. What is an ORM in the context of database interactions?
 80. An ORM (Object-Relational Mapping) is like an SDK for databases that provides an abstraction layer, allowing developers to interact with databases without writing raw SQL or low-level database commands
+
+81. What does the acronym CRUD stand for in software development?
+81. Create, Read, Update, Delete
+
+82. What are the five CRUD operations being implemented for notes in this implementation?
+82. Create a new note, get all notes, find matching notes, remove a note, and remove all notes
+
+83. How is a new note object typically constructed in this implementation?
+83. With properties including content, ID (using Date.now()), and tags
+
+84. What is destructuring in JavaScript?
+84. A technique for extracting properties from an object or array and assigning them to variables with the same names in a concise manner
