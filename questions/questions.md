@@ -296,3 +296,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 99. What are the main types of testing discussed?
 99. The main types of testing discussed are unit testing, integration testing, end-to-end testing, API testing, regression testing, and snapshot testing.
+
+100. What is Jest and what is its origin?
+100. Jest is a testing framework created by Facebook that learned from and incorporated successful elements of previous testing frameworks like Mocha and Jasmine. It has been widely adopted as a standard testing framework and can be used for testing both backend and frontend code.
+
+101. How does Jest find test files in an application?
+101. Jest uses the fs (file system) module to find test files. It looks for files with '.test' in their filename and then imports them for testing.
+
+102. What is the basic anatomy of a Jest test?
+102. A Jest test uses the 'test' function, which takes a description of the test and a callback function. Inside the test, you can use the 'expect' assertion library to make comparisons and validate expected outcomes.
+
+103. What is the difference between dependencies and devDependencies in package.json?
+103. Dependencies are required for the application to run, while devDependencies are only needed during development and testing. DevDependencies are typically not installed when the package is deployed in production.
+
+104. What is code coverage in testing?
+104. Code coverage is a metric that measures the percentage of code that has been tested. Some companies set thresholds for code coverage, requiring tests to cover a certain percentage of the codebase, and use tools to analyze which parts of the code remain untested.
