@@ -266,3 +266,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 89. What normalization technique is used in the findNotes function to improve search flexibility?
 89. The function converts both the note content and search filter to lowercase using .toLowerCase(), ensuring case-insensitive substring matching
+
+90. How can you create a new note with tags using the CLI?
+90. Use the 'notes new' command followed by the note content and optional tags separated by commas, like: 'notes new "clean my room" tags work,serious,inner'
+
+91. What function is used to convert tags input from a string to an array?
+91. The .split(',') method is used to convert comma-separated tag input into an array of tags
+
+92. How can you list all notes in the CLI?
+92. Use the 'notes all' command, which will display all notes with their ID, tags, and content
+
+93. How can you filter notes using the CLI?
+93. Use the 'notes find' command followed by a search term, which will return notes containing that term in their content
+
+94. How can you remove a specific note using the CLI?
+94. Use the 'notes remove' command followed by the note's ID to delete a specific note from the database

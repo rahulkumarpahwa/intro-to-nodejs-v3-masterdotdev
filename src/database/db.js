@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 
-const DB_PATH = new URL("./db.json", import.meta.url).pathname; // Get the absolute path to db.json file
+const DB_PATH = new URL("./db.json", import.meta.url);
 
 // Function to read and parse the db.json file
 export const readDB = async () => {

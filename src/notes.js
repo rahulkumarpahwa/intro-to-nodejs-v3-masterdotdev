@@ -27,7 +27,7 @@ export const findNotes = async (filter) => {
   return notes.filter((note) => note.content.toLowerCase().includes(filter.toLowerCase()));
 }
 
-const removeNote = async (id) => {
+export const removeNote = async (id) => {
   const db = await readDB();
   const noteIndex = db.notes.findIndex((note) => note.id === id);
   if (noteIndex === -1) {

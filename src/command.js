@@ -31,9 +31,16 @@
 
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { createNote, getAllNotes, findNotes, removeNote, cleanNotes } from "./notes.js";
+import {
+  createNote,
+  getAllNotes,
+  findNotes,
+  removeNote,
+  cleanNotes,
+} from "./notes.js";
 
 yargs(hideBin(process.argv))
+  .scriptName("note") // Set the script name for the CLI tool when help is displayed and in error messages
   .command(
     "new <note>",
     "create a new note",
@@ -45,7 +52,9 @@ yargs(hideBin(process.argv))
     },
     async (argv) => {
       const note = await createNote({ content: argv.note, tags: argv.tags });
-      console.log(`Note created: ${note.content}`);
+      console.table(
+        `New Note created: ${note.content} with id ${note.id} and tags: ${note.tags?.join(", ") || "None"}`,
+      );
     },
   )
   .option("tags", {
@@ -63,9 +72,11 @@ yargs(hideBin(process.argv))
         console.log("No notes found.");
       } else {
         console.log("All notes:");
-        notes.forEach((note) => {
-          console.table(`- [${note.id}] ${note.content} Tags: ${note.tags?.join(", ") || "None"}`);
-        });
+        const formattedNotes = notes.map((note) => ({
+          ...note,
+          tags: Array.isArray(note.tags) ? note.tags.join(", ") : note.tags,
+        }));
+        console.table(formattedNotes);
       }
     },
   )
@@ -85,9 +96,11 @@ yargs(hideBin(process.argv))
         console.log(`No notes found matching "${argv.filter}".`);
       } else {
         console.log(`Notes matching "${argv.filter}":`);
-        findedNote.forEach((note) => {
-          console.table(`- [${note.id}] ${note.content} Tags: ${note.tags?.join(", ") || "None"}`);
-        });
+        const formattedNotes = findedNote.map((note) => ({
+          ...note,
+          tags: Array.isArray(note.tags) ? note.tags.join(", ") : note.tags,
+        }));
+        console.table(formattedNotes);
       }
     },
   )
@@ -119,9 +132,7 @@ yargs(hideBin(process.argv))
         type: "number",
       });
     },
-    async (argv) => {
-      
-    },
+    async (argv) => {},
   )
   .command(
     "clean",
