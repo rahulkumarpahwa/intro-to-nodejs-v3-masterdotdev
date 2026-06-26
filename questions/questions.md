@@ -224,3 +224,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 75. What method in the fs module is used to write files?
 75. writeFile() is used to write content to a file. It can be used with async/await when accessing the promises version of the fs module.
+
+76. What method is used to read the database file in Node.js using the fs module?
+76. fs.readFile() is used to read the database file, with UTF-8 encoding specified as the second parameter to ensure proper string parsing
+
+77. What does JSON.stringify() do when saving a database file?
+77. JSON.stringify() converts a JavaScript object into a JSON string, which can then be written to a file. When additional arguments like 2 are used, it formats the JSON with indentation for readability
+
+78. Why can't fs.appendFile() be used directly for adding JSON data?
+78. appendFile() doesn't understand JSON structure and would simply add data to the bottom of the file, which would break the JSON format and make parsing impossible
+
+79. What is the purpose of using file system methods with promises in Node.js?
+79. Using file system methods with promises allows for asynchronous file operations that are non-blocking, making file reading and writing more efficient
+
+80. What is an ORM in the context of database interactions?
+80. An ORM (Object-Relational Mapping) is like an SDK for databases that provides an abstraction layer, allowing developers to interact with databases without writing raw SQL or low-level database commands

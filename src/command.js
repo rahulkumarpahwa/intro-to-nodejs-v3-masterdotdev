@@ -31,6 +31,7 @@
 
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import { insert, readDB, writeDB } from "./database/db.js";
 
 yargs(hideBin(process.argv))
   .command(
