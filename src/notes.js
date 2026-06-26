@@ -23,8 +23,8 @@ const updateNote = async (id, updatedFields) => {
 };
 
 export const findNotes = async (filter) => {
-  const db = await readDB();
-  return db.notes.filter((note) => note.content.includes(filter));
+  const {notes} = await readDB();
+  return notes.filter((note) => note.content.toLowerCase().includes(filter.toLowerCase()));
 }
 
 const removeNote = async (id) => {
@@ -39,8 +39,6 @@ const removeNote = async (id) => {
 };
 
 export const cleanNotes = async () => {
-  const db = await readDB();
-  db.notes = [];
-  await writeDB(db);
-  return db.notes; // Return the empty notes array for confirmation
+  await writeDB({ notes: [] });
+  return []; // Return the empty notes array for confirmation
 };

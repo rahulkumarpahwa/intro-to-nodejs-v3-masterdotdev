@@ -251,3 +251,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 84. What is destructuring in JavaScript?
 84. A technique for extracting properties from an object or array and assigning them to variables with the same names in a concise manner
+
+85. How does the findNotes function perform a text search on notes?
+85. It uses toLowerCase() to normalize the note content and filter array, then uses .includes() to check if the filter text is a substring of the note's content, returning an array of matching notes
+
+86. What is the purpose of the match variable in the removeNote function?
+86. The match variable checks if a note with the specified ID exists in the database, which helps determine whether to proceed with removal and ensures only existing notes can be deleted
+
+87. Why does the code use .filter() instead of directly mutating the notes array when removing a note?
+87. To create a new array without the specified note in an immutable way, avoiding potential side effects and maintaining data integrity by not modifying the original array
+
+88. How does removeAllNotes reset the database?
+88. It calls saveDB with an empty array for the notes, effectively clearing all existing notes from the database
+
+89. What normalization technique is used in the findNotes function to improve search flexibility?
+89. The function converts both the note content and search filter to lowercase using .toLowerCase(), ensuring case-insensitive substring matching
