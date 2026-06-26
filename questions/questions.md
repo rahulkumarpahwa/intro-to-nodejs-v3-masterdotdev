@@ -311,3 +311,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 104. What is code coverage in testing?
 104. Code coverage is a metric that measures the percentage of code that has been tested. Some companies set thresholds for code coverage, requiring tests to cover a certain percentage of the codebase, and use tools to analyze which parts of the code remain untested.
+
+105. What is the purpose of mocking in unit testing?
+105. Mocking allows replacing a function or dependency with a stub or alternative version, typically a function that does nothing, to isolate the unit being tested and avoid testing external dependencies like databases or complex functions.
+
+106. What is a 'spy' in testing context?
+106. A spy is a function that tracks and records its interactions, such as how many times it was called, what arguments it received, and who called it, enabling detailed test expectations about function behavior.
+
+107. Why are dynamic imports used in testing with ESM modules?
+107. Dynamic imports (using import as a function with await) are necessary to mock modules before importing them, which is required in the new ESM syntax to ensure mocking works correctly before module loading.
+
+108. What is the purpose of beforeEach() in testing?
+108. The beforeEach() function runs before each test, clearing out mocks and ensuring that each test starts with a fresh, stateless environment, preventing tests from being dependent on the state of previous tests.
+
+109. What is the difference between toEqual() and toBe() in testing assertions?
+109. toEqual() performs a deep comparison checking object properties, while toBe() checks for strict equality (same object in memory). Objects with the same properties will pass toEqual() but fail toBe().
