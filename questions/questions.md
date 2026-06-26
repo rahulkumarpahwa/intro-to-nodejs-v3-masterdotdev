@@ -209,3 +209,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 70. What are the requirements for using await in a function?
 70. The function must be marked as async, and the value being awaited must return a Promise
+
+71. What does the 'fs' module in Node.js stand for?
+71. File system. It provides an API to interact with files programmatically.
+
+72. List five frequently used methods in the fs module.
+72. mkdir (make directory), 2. readdir (read directory), 3. stat (get file information), 4. unlink (delete file), 5. rename (rename file)
+
+73. What is the difference between readFileSync and readFile?
+73. readFileSync is a blocking synchronous function that stops all other operations until the file is read, while readFile is an asynchronous method that allows other operations to continue while reading the file.
+
+74. How can you use the fs module to read files in Node.js with promises?
+74. Use fs.promises.readFile() with async/await, which returns a promise and allows for non-blocking file reading.
+
+75. What method in the fs module is used to write files?
+75. writeFile() is used to write content to a file. It can be used with async/await when accessing the promises version of the fs module.
