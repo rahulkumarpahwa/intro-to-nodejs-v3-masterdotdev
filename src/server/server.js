@@ -1,43 +1,46 @@
-import fs from 'node:fs/promises'
-import http from 'node:http'
-import open from 'open'
+import fs from "node:fs/promises";
+import http from "node:http";
+import open from "open";
 
 const interpolate = (html, data) => {
   return html.replace(/\{\{\s*(\w+)\s*\}\}/g, (match, placeholder) => {
-    return data[placeholder] || '';
+    return data[placeholder] || "";
   });
-}
+};
 
 const formatNotes = (notes) => {
-  return notes.map((note, i) => {
-    return `
+  return notes
+    .map((note, i) => {
+      return `
       <div class="note">
+        <div class="note" data-id="${note.id}">
         <h2>Note ${i + 1}</h2>
         <p> Content: ${note.content}</p>
         <p> Tags: </p>
         <div class="tags">
-          ${note.tags.map(tag => `<span class="tag">${tag}</span>`)}
+          ${note.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
         </div>
       </div>
-    `
-  }).join('\n')
-}
+    `;
+    })
+    .join("\n");
+};
 
 const createServer = (notes) => {
   return http.createServer(async (req, res) => {
-    const HTML_PATH = new URL('./template.html', import.meta.url)
-    const template = await fs.readFile(HTML_PATH, 'utf-8')
-    const html = interpolate(template, {notes: formatNotes(notes)})
-    
-    res.writeHead(200, {'Content-Type': 'text/html'});
+    const HTML_PATH = new URL("./template.html", import.meta.url);
+    const template = await fs.readFile(HTML_PATH, "utf-8");
+    const html = interpolate(template, { notes: formatNotes(notes) });
+
+    res.writeHead(200, { "Content-Type": "text/html" });
     res.end(html);
   });
-}
+};
 
 export const start = (notes, port) => {
-  const server = createServer(notes)
+  const server = createServer(notes);
   server.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
   });
-  open(`http://localhost:${port}`)
-}
+  open(`http://localhost:${port}`);
+};

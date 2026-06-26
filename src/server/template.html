@@ -1,13 +1,163 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notes CLI</title>
-  </head>
-  <body>
-    <div class="notes">
-      {{notes}}
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes CLI</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      padding: 40px;
+    }
+
+    .notes {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .note {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      cursor: pointer;
+      border: 1px solid #e5e7eb;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .note:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .note h2 {
+      color: #2563eb;
+      margin-bottom: 12px;
+    }
+
+    .note p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      background: #2563eb;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    .note::after {
+      content: "Click to copy ID";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 12px;
+      color: #888;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .note:hover::after {
+      opacity: 1;
+    }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #16a34a;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all .25s ease;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      .note::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="toast" class="toast"></div>
+
+  <div class="notes">
+    {{notes}}
+  </div>
+
+  <script>
+    const toast = document.getElementById("toast");
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toast.timeout);
+
+      toast.timeout = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 1800);
+    }
+
+    document.addEventListener("click", async (e) => {
+      const note = e.target.closest(".note");
+      if (!note) return;
+
+      const id = note.dataset.id;
+
+      try {
+        await navigator.clipboard.writeText(id);
+
+        showToast(`Copied ID: ${id}`);
+
+        note.style.transform = "scale(.98)";
+        setTimeout(() => {
+          note.style.transform = "";
+        }, 120);
+
+      } catch {
+        showToast("Failed to copy ID");
+      }
+    });
+  </script>
+
+</body>
 </html>
