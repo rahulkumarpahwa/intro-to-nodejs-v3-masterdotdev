@@ -371,3 +371,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 124. What is the structure of a formatted note in HTML?
 124. A formatted note consists of a div with class 'note', containing a paragraph with the note content, and a div of tags where each tag is rendered as a span with class 'tag'
+
+125. What method is used to create an HTTP server in this code?
+125. http.createServer() is used to create an HTTP server, which takes a callback function with request and response parameters
+
+126. How is the HTML template file read in this code?
+126. The HTML template is read using fs.readFile() with the path generated using new URL() and imports.meta.url, and is read with UTF-8 encoding
+
+127. What two methods are used to send the HTML response back to the client?
+127. res.writeHead() is used to set the status code and headers, and res.end(html) is used to send the final HTML content back to the client
+
+128. What is the purpose of the start() function in the server code?
+128. The start() function creates the server using createServer(), listens on a specified port, and opens the server address in a browser
+
+129. What content type is set when sending the HTML response?
+129. The content type is set to 'text/html' to instruct the browser to render the response as HTML
