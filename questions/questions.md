@@ -281,3 +281,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 94. How can you remove a specific note using the CLI?
 94. Use the 'notes remove' command followed by the note's ID to delete a specific note from the database
+
+95. What is unit testing?
+95. Unit testing involves testing a small, individual unit of code (like a function or module) in isolation, verifying that given a specific input, it produces the expected output.
+
+96. What is the difference between integration testing and end-to-end testing?
+96. Integration testing checks how different units of code work together in a specific flow, while end-to-end testing simulates the entire user journey from start to finish, including user interactions like clicking, scrolling, and traversing through all system components.
+
+97. What is a headless browser?
+97. A headless browser is a browser without a user interface that still executes code, runs tests, and is more memory-efficient. It can run in environments without a UI, such as a terminal, while still allowing automated browser testing.
+
+98. What is API testing?
+98. API testing involves verifying the functionality of API routes, including checking response headers, status codes, error handling, and ensuring the API performs its intended function correctly from start to finish.
+
+99. What are the main types of testing discussed?
+99. The main types of testing discussed are unit testing, integration testing, end-to-end testing, API testing, regression testing, and snapshot testing.
