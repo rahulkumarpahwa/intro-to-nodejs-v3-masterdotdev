@@ -16,7 +16,8 @@ beforeEach(() => {
   writeDB.mockClear();
 });
 
-describe("Notes CLI", () => { // Test suite for the Notes CLI functionality
+describe("Notes CLI", () => {
+  // Test suite for the Notes CLI functionality
   // Test suite for the insert function
   test("call insert and return the new note", async () => {
     const note = {
@@ -41,9 +42,32 @@ describe("Notes CLI", () => { // Test suite for the Notes CLI functionality
     const db = {
       notes: ["note1", "note2", "note3"],
     };
-    readDB.mockResolvedValue(db);
+    readDB.mockResolvedValue(db); // it changes the implementation of readDB to return a mocked database object with notes
 
     const result = await getAllNotes();
     expect(result).toEqual(db.notes); // Check if the result matches the notes in the mocked database
+  });
+
+  test("removeNote removes a note by id", async () => {
+    const db = {
+      notes: [
+        { id: 1, content: "Note 1" },
+        { id: 2, content: "Note 2" },
+        { id: 3, content: "Note 3" },
+      ],
+    };
+
+    readDB.mockResolvedValue(db); // it changes the implementation of readDB to return a mocked database object with notes
+    writeDB.mockResolvedValue(); // it changes the implementation of writeDB to return a resolved promise
+
+    const removedNote = await removeNote(2); // Call the removeNote function with the id of the note to be removed
+ 
+    expect(removedNote).toEqual([{ id: 2, content: "Note 2" }]);
+    expect(writeDB).toHaveBeenCalledWith({ //  Check if writeDB was called with the updated database object after removing the note
+      notes: [
+        { id: 1, content: "Note 1" },
+        { id: 3, content: "Note 3" },
+      ],
+    });
   });
 });
