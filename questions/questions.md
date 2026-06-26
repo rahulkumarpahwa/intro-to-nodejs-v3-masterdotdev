@@ -356,3 +356,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 119. What is a port in the context of server communication?
 119. A four or five-digit number used to connect to a socket that enables HTTP communication, with common ports being 3000, 4000, and 5000
+
+120. What is interpolation in the context of web development?
+120. Interpolation is the process of replacing placeholders in a string with corresponding values from a data object, such as replacing {{name}} with the actual value of data.name
+
+121. What is the purpose of the regex pattern used in the interpolate function?
+121. The regex pattern looks for double brackets containing a word, globally across the entire string, to identify placeholders that need to be replaced with matching data values
+
+122. How can notes be converted into HTML divs using JavaScript?
+122. Using the map() method to transform each note into an HTML div, including the note's content and tags, typically by returning a string of HTML for each note
+
+123. What packages are imported for creating a server that renders notes?
+123. The server imports 'fs' (file system), 'http' (for creating HTTP server), and 'open' (to automatically open the browser)
+
+124. What is the structure of a formatted note in HTML?
+124. A formatted note consists of a div with class 'note', containing a paragraph with the note content, and a div of tags where each tag is rendered as a span with class 'tag'

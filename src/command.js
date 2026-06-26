@@ -38,7 +38,7 @@ import {
   removeNote,
   cleanNotes,
 } from "./notes.js";
-import {setServerPort} from "./server.js";
+import { start } from "./server/server.js";
 
 yargs(hideBin(process.argv))
   .scriptName("note") // Set the script name for the CLI tool when help is displayed and in error messages
@@ -134,7 +134,8 @@ yargs(hideBin(process.argv))
       });
     },
     async (argv) => {
-      setServerPort(argv.port);
+     const notes = await getAllNotes()
+    start(notes, argv.port)
     },
   )
   .command(
