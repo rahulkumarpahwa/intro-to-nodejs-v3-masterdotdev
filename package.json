@@ -23,6 +23,7 @@
   "homepage": "https://github.com/rahulkumarpahwa/intro-to-nodejs-v3-masterdotdev#readme",
   "dependencies": {
     "express": "^5.2.1",
+    "open": "^11.0.0",
     "yargs": "^18.0.0"
   },
   "devDependencies": {

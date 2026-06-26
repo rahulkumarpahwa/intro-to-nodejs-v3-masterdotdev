@@ -341,3 +341,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 114. Why might a testing framework provide multiple ways to write test descriptions?
 114. Different testing syntaxes like test() and it() offer developers flexibility in writing test descriptions that match their preferred style or team conventions, while maintaining the same functional testing capabilities.
+
+115. What is a server in the context of Node.js?
+115. A program that listens for incoming network requests and returns a response to those requests
+
+116. What are the two primary objects received when creating a server with Node.js HTTP module?
+116. Request object (req) and response object (res), which represent who is asking and how to reply
+
+117. What do HTTP status codes in the 200-300 range indicate?
+117. Successful requests
+
+118. What is a MIME type?
+118. The equivalent of a file type for the Internet, indicating the type of data being sent
+
+119. What is a port in the context of server communication?
+119. A four or five-digit number used to connect to a socket that enables HTTP communication, with common ports being 3000, 4000, and 5000
