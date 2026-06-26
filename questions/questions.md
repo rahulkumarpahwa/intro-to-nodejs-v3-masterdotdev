@@ -326,3 +326,18 @@ The async-await (or promise.then) pattern is useful when one async operation dep
 
 109. What is the difference between toEqual() and toBe() in testing assertions?
 109. toEqual() performs a deep comparison checking object properties, while toBe() checks for strict equality (same object in memory). Objects with the same properties will pass toEqual() but fail toBe().
+
+110. What is the purpose of grouping tests using the describe function in testing?
+110. Grouping tests helps organize and manage test suites, especially in larger applications with hundreds or thousands of tests, making it easier to read and understand the test structure.
+
+111. What are two different syntaxes for writing tests in testing frameworks?
+111. Two common syntaxes are using test() or it(), such as test('description', () => {...}) or `it('should do something', () => {...}). Both work similarly, representing different stylistic approaches to writing tests.
+
+112. In the example test for removeNote, what is the assertion being made about removing a non-existent note?
+112. The test checks that attempting to remove a note with an ID that does not exist returns undefined.
+
+113. What is the basic approach shown for testing getAllNotes in the example?
+113. The test mocks a database with some notes and checks that the returned notes match the mock database, without verifying the specific shape of the notes.
+
+114. Why might a testing framework provide multiple ways to write test descriptions?
+114. Different testing syntaxes like test() and it() offer developers flexibility in writing test descriptions that match their preferred style or team conventions, while maintaining the same functional testing capabilities.
